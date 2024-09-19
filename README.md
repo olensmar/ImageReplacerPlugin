@@ -1,6 +1,6 @@
 # PNG Image Replacer Plugin
 
-A simple Intellij Plugin that makes it easy to replace the content of existing PNG image files.dd
+A simple Intellij Plugin that makes it easy to replace the content of existing PNG image files. 
 
 ## Usage 
 
@@ -27,5 +27,11 @@ Install this jar using the "Install Plugin from Disk." option in the Intellij Pl
 
 ![Plugin Installation from file](plugin-install.png)
 
+
+## Why?
+
+I created this as I was frequently updating screenshots in documentation projects.
+
+Feel free to open issues/PRs, etc.
 
 Have fun!
