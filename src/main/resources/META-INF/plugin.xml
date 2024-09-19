@@ -12,7 +12,7 @@
 
     <actions>
         <action id="ReplaceImageWithClipboard"
-                class="com.example.ReplaceImageWithClipboardAction"
+                class="io.olensmar.ReplaceImageWithClipboardAction"
                 text="Replace with Clipboard Image"
                 description="Replaces the image in the file with the image in the clipboard">
             <add-to-group group-id="RefactoringMenu" anchor="after" relative-to-action="RenameFile"/>
