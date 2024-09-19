@@ -21,7 +21,7 @@ Install either from the Intellij Marketplace or clone this repo and build with
 ./gradlew buildPlugin
 ```
 
-If all goes well the plugin jar will be in the build/libs folder.
+If all goes well the plugin jar will be in the `build/libs` folder.
 
 Install this jar using the "Install Plugin from Disk." option in the Intellij Plugin Settings:
 
@@ -30,7 +30,7 @@ Install this jar using the "Install Plugin from Disk." option in the Intellij Pl
 
 ## Why?
 
-I created this as I was frequently updating screenshots in documentation projects.
+I created this as I am frequently updating screenshots in documentation projects. And I'm lazy.
 
 Feel free to open issues/PRs, etc.
 
