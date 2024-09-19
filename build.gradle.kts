@@ -4,8 +4,8 @@ plugins {
     id("org.jetbrains.intellij") version "1.17.4"
 }
 
-group = "io.kubeshop"
-version = "1.0-SNAPSHOT"
+group = "io.olensmar"
+version = "0.1.0"
 
 repositories {
     mavenCentral()
