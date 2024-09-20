@@ -25,6 +25,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -37,7 +38,6 @@ import java.util.List;
 public class ReplaceImageWithClipboardAction extends AnAction {
     @Override
     public void actionPerformed(AnActionEvent e) {
-        // Get the file and project details from the action
         VirtualFile file = e.getData(CommonDataKeys.VIRTUAL_FILE);
         Project project = e.getProject();
 
@@ -52,7 +52,7 @@ public class ReplaceImageWithClipboardAction extends AnAction {
                             project,
                             "Replace image in file [" + file.getName() + "] with clipboard image?",
                             "Confirmation",
-                            Messages.getQuestionIcon()
+                            getMessageIcon(image, 250)
                     );
 
                     if (result == Messages.YES) {
@@ -75,6 +75,24 @@ public class ReplaceImageWithClipboardAction extends AnAction {
         } else {
             System.out.println("ReplaceImageWithClipboardAction: File is not png.");
         }
+    }
+
+    private static @NotNull ImageIcon getMessageIcon(BufferedImage image, int maxSize) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        if( width > maxSize || height > maxSize ){
+            if( width > height ){
+                height = height * maxSize / width;
+                width = maxSize;
+            }
+            else {
+                width = width * maxSize / height;
+                height = maxSize;
+            }
+        }
+
+        return new ImageIcon(image.getScaledInstance(width, height, Image.SCALE_SMOOTH));
     }
 
     public static BufferedImage getBufferedImage(Image img) {
@@ -107,7 +125,6 @@ public class ReplaceImageWithClipboardAction extends AnAction {
 
     @Override
     public void update(AnActionEvent e) {
-        // Update the visibility of the action depending on the context
         VirtualFile file = e.getData(CommonDataKeys.VIRTUAL_FILE);
         boolean isPngFile = file != null && file.getName().endsWith(".png");
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
