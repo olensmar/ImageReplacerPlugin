@@ -7,7 +7,7 @@ A simple Intellij Plugin that makes it easy to replace the content of existing P
 Use the right-click **Refactor -> Replace with Clipboard Image** popup menu option, either from the
 project tree or by right-clicking an image.
 
-![Image Replace popoup menu action](screenshot.png)
+![Image Replace popoup menu action](docs/images/screenshot.png)
 
 The plugin will prompt for confirmation and then overwrite the selected file with whatever image is in the 
 clipboard. If this is a multi-resolution image the plugin will use the image with the highest resolution.
@@ -25,7 +25,7 @@ If all goes well the plugin jar will be in the `build/libs` folder.
 
 Install this jar using the "Install Plugin from Disk." option in the Intellij Plugin Settings:
 
-![Plugin Installation from file](plugin-install.png)
+![Plugin Installation from file](docs/images/plugin-install.png)
 
 
 ## Why?
