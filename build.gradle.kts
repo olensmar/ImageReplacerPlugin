@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "io.olensmar"
-version = "0.1.0"
+version = "0.1.1"
 
 repositories {
     mavenCentral()
@@ -31,8 +31,8 @@ tasks {
     }
 
     patchPluginXml {
-        sinceBuild.set("232.*")
-        untilBuild.set("244.*")
+        sinceBuild.set("232.1")
+        untilBuild.set("243.*")
     }
 
     signPlugin {
